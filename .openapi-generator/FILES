@@ -1,9 +1,12 @@
-.gitignore
-.npmignore
 .openapi-generator-ignore
-api.ts
-base.ts
-common.ts
+api/DefaultApi.ts
+api/api.ts
 configuration.ts
 git_push.sh
 index.ts
+model/GetApiExternal200Response.ts
+model/PatchUsersUserIdRequest.ts
+model/PostUserRequest.ts
+model/User.ts
+model/models.ts
+variables.ts

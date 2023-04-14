@@ -1,7 +1,7 @@
 {
-  "name": "ts-axios-cloudwpss23-openapi-cyan",
+  "name": "ts-cloudwpss23-openapi-cyan",
   "version": "1.0.0",
-  "description": "Cloudwpss23OpenapiCyan Axios TS Openapi",
+  "description": "TS Jquery cloudwp api",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/haw-cloud-wp/ts-cloudwpss23-openapi-cyan/issues"
   },
-  "homepage": "https://github.com/haw-cloud-wp/ts-cloudwpss23-openapi-cyan#readme"
+  "homepage": "https://github.com/haw-cloud-wp/ts-cloudwpss23-openapi-cyan#readme",
+  "dependencies": {
+    "jquery": "^3.6.4",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.16"
+  }
 }
