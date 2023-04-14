@@ -13,15 +13,15 @@
 import * as models from './models';
 
 export interface PatchUsersUserIdRequest {
-    firstName?: any;
+    firstName?: string;
 
-    lastName?: any;
+    lastName?: string;
 
     /**
      * If a new email is given, the user\'s email verified property will be set to false.
      */
-    email?: any;
+    email?: string;
 
-    dateOfBirth?: any;
+    dateOfBirth?: string;
 
 }

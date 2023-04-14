@@ -13,12 +13,12 @@
 import * as models from './models';
 
 export interface PostUserRequest {
-    firstName: any;
+    firstName: string;
 
-    lastName: any;
+    lastName: string;
 
-    email: any;
+    email: string;
 
-    dateOfBirth: any;
+    dateOfBirth: string;
 
 }

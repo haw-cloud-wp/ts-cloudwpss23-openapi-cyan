@@ -116,7 +116,7 @@ export class DefaultApi {
      * @summary Get User Info by User ID
      * @param userId Id of an existing user.
      */
-    public getUsersUserId(userId: any, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public getUsersUserId(userId: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.User;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -315,7 +315,7 @@ export class DefaultApi {
      * @summary 
      * @param userId Id of an existing user.
      */
-    public optionsUsersUserId(userId: any, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public optionsUsersUserId(userId: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -386,7 +386,7 @@ export class DefaultApi {
      * @param userId Id of an existing user.
      * @param patchUsersUserIdRequest Patch user properties to update.
      */
-    public patchUsersUserId(userId: any, patchUsersUserIdRequest?: models.PatchUsersUserIdRequest, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public patchUsersUserId(userId: number, patchUsersUserIdRequest?: models.PatchUsersUserIdRequest, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.User;  },
     { response: JQueryXHR; errorThrown: string }
     > {

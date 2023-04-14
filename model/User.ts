@@ -12,31 +12,28 @@
 
 import * as models from './models';
 
-/**
- * 
- */
 export interface User {
     /**
      * Unique identifier for the given user.
      */
-    id: any;
+    id: number;
 
-    firstName: any;
+    firstName: string;
 
-    lastName: any;
+    lastName: string;
 
-    email: any;
+    email: string;
 
-    dateOfBirth?: any;
+    dateOfBirth?: string;
 
     /**
      * Set to true if the user\'s email has been verified.
      */
-    emailVerified: any;
+    emailVerified: boolean;
 
     /**
      * The date that the user was created.
      */
-    createDate?: any;
+    createDate?: string;
 
 }
