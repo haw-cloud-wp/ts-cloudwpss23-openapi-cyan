@@ -14,4 +14,5 @@ import * as models from './models';
 
 export interface GetApiExternal200Response {
     pong: string;
+
 }
