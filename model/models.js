@@ -15,6 +15,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./GetApiExternal200Response"), exports);
+__exportStar(require("./GetFiles200Response"), exports);
 __exportStar(require("./PatchUsersUserIdRequest"), exports);
 __exportStar(require("./PostUserRequest"), exports);
 __exportStar(require("./User"), exports);

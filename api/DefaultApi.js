@@ -86,6 +86,52 @@ var DefaultApi = /** @class */ (function () {
         return dfd.promise();
     };
     /**
+     *
+     * @summary Your GET endpoint
+     */
+    DefaultApi.prototype.getFiles = function (extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/files';
+        var queryParameters = {};
+        var headerParams = {};
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [
+            'application/json'
+        ];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
      * Retrieve the information of the user with the matching user ID.
      * @summary Get User Info by User ID
      * @param userId Id of an existing user.
@@ -186,6 +232,50 @@ var DefaultApi = /** @class */ (function () {
      */
     DefaultApi.prototype.optionsFileUpload = function (extraJQueryAjaxSettings) {
         var localVarPath = this.basePath + '/file/upload';
+        var queryParameters = {};
+        var headerParams = {};
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'OPTIONS',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
+     * @summary
+     */
+    DefaultApi.prototype.optionsFiles = function (extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/files';
         var queryParameters = {};
         var headerParams = {};
         localVarPath = localVarPath + "?" + $.param(queryParameters);

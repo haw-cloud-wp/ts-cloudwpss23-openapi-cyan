@@ -4,6 +4,7 @@ configuration.ts
 git_push.sh
 index.ts
 model/GetApiExternal200Response.ts
+model/GetFiles200Response.ts
 model/PatchUsersUserIdRequest.ts
 model/PostUserRequest.ts
 model/User.ts
