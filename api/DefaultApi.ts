@@ -593,9 +593,10 @@ export class DefaultApi {
     /**
      * 
      * @summary 
-     * @param body 
+     * @param name 
+     * @param data 
      */
-    public putFileUpload(body?: File, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public putFileUpload(name?: string, data?: File, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -603,11 +604,19 @@ export class DefaultApi {
 
         let queryParameters: any = {};
         let headerParams: any = {};
+        let formParams = new FormData();
+        let reqHasFile = false;
+
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
+        if (name !== null && name !== undefined) {
+            formParams.append('name', <any>name);
+        }
+        reqHasFile = true;
+        formParams.append("data", data);
         // to determine the Content-Type header
         let consumes: string[] = [
-            'application/octet-stream'
+            'multipart/form-data'
         ];
 
         // to determine the Accept header
@@ -623,8 +632,10 @@ export class DefaultApi {
             headerParams['Authorization'] = 'Bearer ' + accessToken;
         }
 
+        if (!reqHasFile) {
+            headerParams['Content-Type'] = 'application/x-www-form-urlencoded';
+        }
 
-        headerParams['Content-Type'] = 'application/json';
 
         let requestOptions: JQueryAjaxSettings = {
             url: localVarPath,
@@ -633,9 +644,12 @@ export class DefaultApi {
             processData: false
         };
 
-        requestOptions.data = JSON.stringify(body);
         if (headerParams['Content-Type']) {
             requestOptions.contentType = headerParams['Content-Type'];
+        }
+        requestOptions.data = formParams;
+        if (reqHasFile) {
+            requestOptions.contentType = false;
         }
 
         if (extraJQueryAjaxSettings) {

@@ -427,16 +427,24 @@ var DefaultApi = /** @class */ (function () {
     /**
      *
      * @summary
-     * @param body
+     * @param name
+     * @param data
      */
-    DefaultApi.prototype.putFileUpload = function (body, extraJQueryAjaxSettings) {
+    DefaultApi.prototype.putFileUpload = function (name, data, extraJQueryAjaxSettings) {
         var localVarPath = this.basePath + '/file/upload';
         var queryParameters = {};
         var headerParams = {};
+        var formParams = new FormData();
+        var reqHasFile = false;
         localVarPath = localVarPath + "?" + $.param(queryParameters);
+        if (name !== null && name !== undefined) {
+            formParams.append('name', name);
+        }
+        reqHasFile = true;
+        formParams.append("data", data);
         // to determine the Content-Type header
         var consumes = [
-            'application/octet-stream'
+            'multipart/form-data'
         ];
         // to determine the Accept header
         var produces = [];
@@ -448,16 +456,21 @@ var DefaultApi = /** @class */ (function () {
                 : this.configuration.accessToken;
             headerParams['Authorization'] = 'Bearer ' + accessToken;
         }
-        headerParams['Content-Type'] = 'application/json';
+        if (!reqHasFile) {
+            headerParams['Content-Type'] = 'application/x-www-form-urlencoded';
+        }
         var requestOptions = {
             url: localVarPath,
             type: 'PUT',
             headers: headerParams,
             processData: false
         };
-        requestOptions.data = JSON.stringify(body);
         if (headerParams['Content-Type']) {
             requestOptions.contentType = headerParams['Content-Type'];
+        }
+        requestOptions.data = formParams;
+        if (reqHasFile) {
+            requestOptions.contentType = false;
         }
         if (extraJQueryAjaxSettings) {
             requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
