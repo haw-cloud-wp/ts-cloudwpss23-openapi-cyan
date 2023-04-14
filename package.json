@@ -1,0 +1,19 @@
+{
+  "name": "ts-axios-cloudwpss23-openapi-cyan",
+  "version": "1.0.0",
+  "description": "Cloudwpss23OpenapiCyan Axios TS Openapi",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haw-cloud-wp/ts-cloudwpss23-openapi-cyan.git"
+  },
+  "author": "Anton Scharnowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haw-cloud-wp/ts-cloudwpss23-openapi-cyan/issues"
+  },
+  "homepage": "https://github.com/haw-cloud-wp/ts-cloudwpss23-openapi-cyan#readme"
+}
