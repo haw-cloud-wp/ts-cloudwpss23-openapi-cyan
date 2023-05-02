@@ -12,9 +12,7 @@
 
 import * as models from './models';
 
-export interface GetFiles200Response {
-    bucket?: string;
-
-    files?: Array<models.FileInfo>;
+export interface PostV1BucketNameRequest {
+    name?: string;
 
 }

@@ -41,10 +41,164 @@ var DefaultApi = /** @class */ (function () {
     };
     /**
      *
+     * @summary
+     * @param bucketName
+     */
+    DefaultApi.prototype.deleteV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling deleteV1BucketName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'DELETE',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
+     * @summary
+     * @param bucketName
+     * @param fileName
+     */
+    DefaultApi.prototype.deleteV1FileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling deleteV1FileName.');
+        }
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling deleteV1FileName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'DELETE',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
+     * @summary Your GET endpoint
+     * @param bucketName
+     */
+    DefaultApi.prototype.getV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling getV1BucketName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [
+            'application/json'
+        ];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
      * @summary Your GET endpoint
      */
-    DefaultApi.prototype.getApiExternal = function (extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/api/external';
+    DefaultApi.prototype.getV1Buckets = function (extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Buckets';
         var queryParameters = {};
         var headerParams = {};
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -88,61 +242,20 @@ var DefaultApi = /** @class */ (function () {
     /**
      *
      * @summary Your GET endpoint
+     * @param bucketName
+     * @param fileName
      */
-    DefaultApi.prototype.getFiles = function (extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/files';
+    DefaultApi.prototype.getV1FileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
-        localVarPath = localVarPath + "?" + $.param(queryParameters);
-        // to determine the Content-Type header
-        var consumes = [];
-        // to determine the Accept header
-        var produces = [
-            'application/json'
-        ];
-        // authentication (bearer) required
-        // oauth required
-        if (this.configuration.accessToken) {
-            var accessToken = typeof this.configuration.accessToken === 'function'
-                ? this.configuration.accessToken()
-                : this.configuration.accessToken;
-            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling getV1FileName.');
         }
-        var requestOptions = {
-            url: localVarPath,
-            type: 'GET',
-            headers: headerParams,
-            processData: false
-        };
-        if (headerParams['Content-Type']) {
-            requestOptions.contentType = headerParams['Content-Type'];
-        }
-        if (extraJQueryAjaxSettings) {
-            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
-        }
-        if (this.defaultExtraJQueryAjaxSettings) {
-            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
-        }
-        var dfd = $.Deferred();
-        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
-            return dfd.resolve({ response: jqXHR, body: data });
-        }, function (xhr, textStatus, errorThrown) {
-            return dfd.reject({ response: xhr, errorThrown: errorThrown });
-        });
-        return dfd.promise();
-    };
-    /**
-     * Retrieve the information of the user with the matching user ID.
-     * @summary Get User Info by User ID
-     * @param userId Id of an existing user.
-     */
-    DefaultApi.prototype.getUsersUserId = function (userId, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/users/{userId}'.replace('{' + 'userId' + '}', encodeURIComponent(String(userId)));
-        var queryParameters = {};
-        var headerParams = {};
-        // verify required parameter 'userId' is not null or undefined
-        if (userId === null || userId === undefined) {
-            throw new Error('Required parameter userId was null or undefined when calling getUsersUserId.');
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling getV1FileName.');
         }
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header
@@ -184,10 +297,110 @@ var DefaultApi = /** @class */ (function () {
     };
     /**
      *
+     * @summary Your GET endpoint
+     * @param bucketName
+     */
+    DefaultApi.prototype.getV1Files = function (bucketName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}/Files'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling getV1Files.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [
+            'application/json'
+        ];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
+     * @summary
+     * @param bucketName
+     */
+    DefaultApi.prototype.optionsV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling optionsV1BucketName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'OPTIONS',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
      * @summary
      */
-    DefaultApi.prototype.optionsApiExternal = function (extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/api/external';
+    DefaultApi.prototype.optionsV1Buckets = function (extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Buckets';
         var queryParameters = {};
         var headerParams = {};
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -229,11 +442,21 @@ var DefaultApi = /** @class */ (function () {
     /**
      *
      * @summary
+     * @param bucketName
+     * @param fileName
      */
-    DefaultApi.prototype.optionsFileUpload = function (extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/file/upload';
+    DefaultApi.prototype.optionsV1FileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling optionsV1FileName.');
+        }
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling optionsV1FileName.');
+        }
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header
         var consumes = [];
@@ -273,11 +496,16 @@ var DefaultApi = /** @class */ (function () {
     /**
      *
      * @summary
+     * @param bucketName
      */
-    DefaultApi.prototype.optionsFiles = function (extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/files';
+    DefaultApi.prototype.optionsV1Files = function (bucketName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}/Files'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling optionsV1Files.');
+        }
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header
         var consumes = [];
@@ -315,111 +543,18 @@ var DefaultApi = /** @class */ (function () {
         return dfd.promise();
     };
     /**
-     *
+     * Set permissions of bucket
      * @summary
+     * @param bucketName
+     * @param modelsPermission
      */
-    DefaultApi.prototype.optionsUser = function (extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/user';
+    DefaultApi.prototype.patchV1BucketName = function (bucketName, modelsPermission, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
-        localVarPath = localVarPath + "?" + $.param(queryParameters);
-        // to determine the Content-Type header
-        var consumes = [];
-        // to determine the Accept header
-        var produces = [];
-        // authentication (bearer) required
-        // oauth required
-        if (this.configuration.accessToken) {
-            var accessToken = typeof this.configuration.accessToken === 'function'
-                ? this.configuration.accessToken()
-                : this.configuration.accessToken;
-            headerParams['Authorization'] = 'Bearer ' + accessToken;
-        }
-        var requestOptions = {
-            url: localVarPath,
-            type: 'OPTIONS',
-            headers: headerParams,
-            processData: false
-        };
-        if (headerParams['Content-Type']) {
-            requestOptions.contentType = headerParams['Content-Type'];
-        }
-        if (extraJQueryAjaxSettings) {
-            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
-        }
-        if (this.defaultExtraJQueryAjaxSettings) {
-            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
-        }
-        var dfd = $.Deferred();
-        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
-            return dfd.resolve({ response: jqXHR, body: data });
-        }, function (xhr, textStatus, errorThrown) {
-            return dfd.reject({ response: xhr, errorThrown: errorThrown });
-        });
-        return dfd.promise();
-    };
-    /**
-     *
-     * @summary
-     * @param userId Id of an existing user.
-     */
-    DefaultApi.prototype.optionsUsersUserId = function (userId, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/users/{userId}'.replace('{' + 'userId' + '}', encodeURIComponent(String(userId)));
-        var queryParameters = {};
-        var headerParams = {};
-        // verify required parameter 'userId' is not null or undefined
-        if (userId === null || userId === undefined) {
-            throw new Error('Required parameter userId was null or undefined when calling optionsUsersUserId.');
-        }
-        localVarPath = localVarPath + "?" + $.param(queryParameters);
-        // to determine the Content-Type header
-        var consumes = [];
-        // to determine the Accept header
-        var produces = [];
-        // authentication (bearer) required
-        // oauth required
-        if (this.configuration.accessToken) {
-            var accessToken = typeof this.configuration.accessToken === 'function'
-                ? this.configuration.accessToken()
-                : this.configuration.accessToken;
-            headerParams['Authorization'] = 'Bearer ' + accessToken;
-        }
-        var requestOptions = {
-            url: localVarPath,
-            type: 'OPTIONS',
-            headers: headerParams,
-            processData: false
-        };
-        if (headerParams['Content-Type']) {
-            requestOptions.contentType = headerParams['Content-Type'];
-        }
-        if (extraJQueryAjaxSettings) {
-            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
-        }
-        if (this.defaultExtraJQueryAjaxSettings) {
-            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
-        }
-        var dfd = $.Deferred();
-        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
-            return dfd.resolve({ response: jqXHR, body: data });
-        }, function (xhr, textStatus, errorThrown) {
-            return dfd.reject({ response: xhr, errorThrown: errorThrown });
-        });
-        return dfd.promise();
-    };
-    /**
-     * Update the information of an existing user.
-     * @summary Update User Information
-     * @param userId Id of an existing user.
-     * @param patchUsersUserIdRequest Patch user properties to update.
-     */
-    DefaultApi.prototype.patchUsersUserId = function (userId, patchUsersUserIdRequest, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/users/{userId}'.replace('{' + 'userId' + '}', encodeURIComponent(String(userId)));
-        var queryParameters = {};
-        var headerParams = {};
-        // verify required parameter 'userId' is not null or undefined
-        if (userId === null || userId === undefined) {
-            throw new Error('Required parameter userId was null or undefined when calling patchUsersUserId.');
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling patchV1BucketName.');
         }
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header
@@ -427,9 +562,7 @@ var DefaultApi = /** @class */ (function () {
             'application/json'
         ];
         // to determine the Accept header
-        var produces = [
-            'application/json'
-        ];
+        var produces = [];
         // authentication (bearer) required
         // oauth required
         if (this.configuration.accessToken) {
@@ -445,7 +578,7 @@ var DefaultApi = /** @class */ (function () {
             headers: headerParams,
             processData: false
         };
-        requestOptions.data = JSON.stringify(patchUsersUserIdRequest);
+        requestOptions.data = JSON.stringify(modelsPermission);
         if (headerParams['Content-Type']) {
             requestOptions.contentType = headerParams['Content-Type'];
         }
@@ -464,14 +597,19 @@ var DefaultApi = /** @class */ (function () {
         return dfd.promise();
     };
     /**
-     * Create a new user.
-     * @summary Create New User
-     * @param postUserRequest Post the necessary fields for the API to create a new user.
+     *
+     * @summary
+     * @param bucketName
+     * @param postV1BucketNameRequest
      */
-    DefaultApi.prototype.postUser = function (postUserRequest, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/user';
+    DefaultApi.prototype.postV1BucketName = function (bucketName, postV1BucketNameRequest, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling postV1BucketName.');
+        }
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header
         var consumes = [
@@ -496,7 +634,7 @@ var DefaultApi = /** @class */ (function () {
             headers: headerParams,
             processData: false
         };
-        requestOptions.data = JSON.stringify(postUserRequest);
+        requestOptions.data = JSON.stringify(postV1BucketNameRequest);
         if (headerParams['Content-Type']) {
             requestOptions.contentType = headerParams['Content-Type'];
         }
@@ -517,19 +655,25 @@ var DefaultApi = /** @class */ (function () {
     /**
      *
      * @summary
-     * @param name
+     * @param bucketName
+     * @param fileName
      * @param data
      */
-    DefaultApi.prototype.putFileUpload = function (name, data, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/file/upload';
+    DefaultApi.prototype.putV1FileName = function (bucketName, fileName, data, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
         var formParams = new FormData();
         var reqHasFile = false;
-        localVarPath = localVarPath + "?" + $.param(queryParameters);
-        if (name !== null && name !== undefined) {
-            formParams.append('name', name);
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling putV1FileName.');
         }
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling putV1FileName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
         reqHasFile = true;
         formParams.append("data", data);
         // to determine the Content-Type header
