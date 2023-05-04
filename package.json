@@ -1,6 +1,6 @@
 {
   "name": "ts-cloudwpss23-openapi-cyan",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "TS Jquery cloudwp api",
   "main": "index.ts",
   "scripts": {
