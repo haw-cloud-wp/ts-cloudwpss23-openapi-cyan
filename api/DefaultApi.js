@@ -301,7 +301,7 @@ var DefaultApi = /** @class */ (function () {
      * @param bucketName
      */
     DefaultApi.prototype.getV1Files = function (bucketName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}/Files'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}/Files'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -499,7 +499,7 @@ var DefaultApi = /** @class */ (function () {
      * @param bucketName
      */
     DefaultApi.prototype.optionsV1Files = function (bucketName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}/Files'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}/Files'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
