@@ -18,5 +18,6 @@ __exportStar(require("./Bucket"), exports);
 __exportStar(require("./BucketInfo"), exports);
 __exportStar(require("./FileInfo"), exports);
 __exportStar(require("./ModelFile"), exports);
+__exportStar(require("./OptionsV1BucketBucketNameTranslateFileNameRequest"), exports);
 __exportStar(require("./Permission"), exports);
 __exportStar(require("./PostV1BucketNameRequest"), exports);

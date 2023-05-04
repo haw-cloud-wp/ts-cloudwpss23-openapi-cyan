@@ -196,6 +196,82 @@ export class DefaultApi {
      * 
      * @summary Your GET endpoint
      * @param bucketName 
+     * @param fileName 
+     */
+    public getV1BucketBucketNameTranslateFileName(bucketName: string, fileName: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    { response: JQueryXHR; body?: any;  },
+    { response: JQueryXHR; errorThrown: string }
+    > {
+        let localVarPath = this.basePath + '/v1/Bucket{BucketName}/Translate/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+
+        let queryParameters: any = {};
+        let headerParams: any = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling getV1BucketBucketNameTranslateFileName.');
+        }
+
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling getV1BucketBucketNameTranslateFileName.');
+        }
+
+
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        let consumes: string[] = [
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+        ];
+
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            let accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+
+
+        let requestOptions: JQueryAjaxSettings = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+
+        if (extraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, extraJQueryAjaxSettings);
+        }
+
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+
+        let dfd = $.Deferred<
+            { response: JQueryXHR; body?: any;  },
+            { response: JQueryXHR; errorThrown: string }
+        >();
+        $.ajax(requestOptions).then(
+            (data: any, textStatus: string, jqXHR: JQueryXHR) =>
+                dfd.resolve({response: jqXHR, body: data}),
+            (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
+                dfd.reject({response: xhr, errorThrown: errorThrown})
+        );
+        return dfd.promise();
+    }
+
+    /**
+     * 
+     * @summary Your GET endpoint
+     * @param bucketName 
      */
     public getV1BucketName(bucketName: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.BucketInfo;  },
@@ -469,6 +545,87 @@ export class DefaultApi {
         >();
         $.ajax(requestOptions).then(
             (data: Array<models.FileInfo>, textStatus: string, jqXHR: JQueryXHR) =>
+                dfd.resolve({response: jqXHR, body: data}),
+            (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
+                dfd.reject({response: xhr, errorThrown: errorThrown})
+        );
+        return dfd.promise();
+    }
+
+    /**
+     * 
+     * @summary 
+     * @param bucketName 
+     * @param fileName 
+     * @param optionsV1BucketBucketNameTranslateFileNameRequest 
+     */
+    public optionsV1BucketBucketNameTranslateFileName(bucketName: string, fileName: string, optionsV1BucketBucketNameTranslateFileNameRequest?: models.OptionsV1BucketBucketNameTranslateFileNameRequest, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    { response: JQueryXHR; body?: any;  },
+    { response: JQueryXHR; errorThrown: string }
+    > {
+        let localVarPath = this.basePath + '/v1/Bucket{BucketName}/Translate/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+
+        let queryParameters: any = {};
+        let headerParams: any = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling optionsV1BucketBucketNameTranslateFileName.');
+        }
+
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling optionsV1BucketBucketNameTranslateFileName.');
+        }
+
+
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+        ];
+
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            let accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+
+
+        headerParams['Content-Type'] = 'application/json';
+
+        let requestOptions: JQueryAjaxSettings = {
+            url: localVarPath,
+            type: 'OPTIONS',
+            headers: headerParams,
+            processData: false
+        };
+
+        requestOptions.data = JSON.stringify(optionsV1BucketBucketNameTranslateFileNameRequest);
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+
+        if (extraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, extraJQueryAjaxSettings);
+        }
+
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+
+        let dfd = $.Deferred<
+            { response: JQueryXHR; body?: any;  },
+            { response: JQueryXHR; errorThrown: string }
+        >();
+        $.ajax(requestOptions).then(
+            (data: any, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

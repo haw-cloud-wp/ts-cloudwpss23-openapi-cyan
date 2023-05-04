@@ -146,6 +146,60 @@ var DefaultApi = /** @class */ (function () {
      *
      * @summary Your GET endpoint
      * @param bucketName
+     * @param fileName
+     */
+    DefaultApi.prototype.getV1BucketBucketNameTranslateFileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket{BucketName}/Translate/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling getV1BucketBucketNameTranslateFileName.');
+        }
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling getV1BucketBucketNameTranslateFileName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [];
+        // to determine the Accept header
+        var produces = [];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        var requestOptions = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
+     * @summary Your GET endpoint
+     * @param bucketName
      */
     DefaultApi.prototype.getV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
         var localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
@@ -329,6 +383,65 @@ var DefaultApi = /** @class */ (function () {
             headers: headerParams,
             processData: false
         };
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+        if (extraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, extraJQueryAjaxSettings);
+        }
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = Object.assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+        var dfd = $.Deferred();
+        $.ajax(requestOptions).then(function (data, textStatus, jqXHR) {
+            return dfd.resolve({ response: jqXHR, body: data });
+        }, function (xhr, textStatus, errorThrown) {
+            return dfd.reject({ response: xhr, errorThrown: errorThrown });
+        });
+        return dfd.promise();
+    };
+    /**
+     *
+     * @summary
+     * @param bucketName
+     * @param fileName
+     * @param optionsV1BucketBucketNameTranslateFileNameRequest
+     */
+    DefaultApi.prototype.optionsV1BucketBucketNameTranslateFileName = function (bucketName, fileName, optionsV1BucketBucketNameTranslateFileNameRequest, extraJQueryAjaxSettings) {
+        var localVarPath = this.basePath + '/v1/Bucket{BucketName}/Translate/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var queryParameters = {};
+        var headerParams = {};
+        // verify required parameter 'bucketName' is not null or undefined
+        if (bucketName === null || bucketName === undefined) {
+            throw new Error('Required parameter bucketName was null or undefined when calling optionsV1BucketBucketNameTranslateFileName.');
+        }
+        // verify required parameter 'fileName' is not null or undefined
+        if (fileName === null || fileName === undefined) {
+            throw new Error('Required parameter fileName was null or undefined when calling optionsV1BucketBucketNameTranslateFileName.');
+        }
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        var consumes = [
+            'application/json'
+        ];
+        // to determine the Accept header
+        var produces = [];
+        // authentication (bearer) required
+        // oauth required
+        if (this.configuration.accessToken) {
+            var accessToken = typeof this.configuration.accessToken === 'function'
+                ? this.configuration.accessToken()
+                : this.configuration.accessToken;
+            headerParams['Authorization'] = 'Bearer ' + accessToken;
+        }
+        headerParams['Content-Type'] = 'application/json';
+        var requestOptions = {
+            url: localVarPath,
+            type: 'OPTIONS',
+            headers: headerParams,
+            processData: false
+        };
+        requestOptions.data = JSON.stringify(optionsV1BucketBucketNameTranslateFileNameRequest);
         if (headerParams['Content-Type']) {
             requestOptions.contentType = headerParams['Content-Type'];
         }

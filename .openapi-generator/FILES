@@ -7,6 +7,7 @@ model/Bucket.ts
 model/BucketInfo.ts
 model/FileInfo.ts
 model/ModelFile.ts
+model/OptionsV1BucketBucketNameTranslateFileNameRequest.ts
 model/Permission.ts
 model/PostV1BucketNameRequest.ts
 model/models.ts
