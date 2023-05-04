@@ -55,7 +55,7 @@ export class DefaultApi {
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -126,7 +126,7 @@ export class DefaultApi {
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -201,7 +201,7 @@ export class DefaultApi {
     { response: JQueryXHR; body: models.BucketInfo;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -338,7 +338,7 @@ export class DefaultApi {
     { response: JQueryXHR; body: File;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -485,7 +485,7 @@ export class DefaultApi {
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -620,7 +620,7 @@ export class DefaultApi {
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -766,7 +766,7 @@ export class DefaultApi {
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -841,7 +841,7 @@ export class DefaultApi {
     { response: JQueryXHR; body: models.BucketInfo;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -918,7 +918,7 @@ export class DefaultApi {
     { response: JQueryXHR; body?: any;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        let localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

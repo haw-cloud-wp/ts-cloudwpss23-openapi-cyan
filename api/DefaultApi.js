@@ -45,7 +45,7 @@ var DefaultApi = /** @class */ (function () {
      * @param bucketName
      */
     DefaultApi.prototype.deleteV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -95,7 +95,7 @@ var DefaultApi = /** @class */ (function () {
      * @param fileName
      */
     DefaultApi.prototype.deleteV1FileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -148,7 +148,7 @@ var DefaultApi = /** @class */ (function () {
      * @param bucketName
      */
     DefaultApi.prototype.getV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -246,7 +246,7 @@ var DefaultApi = /** @class */ (function () {
      * @param fileName
      */
     DefaultApi.prototype.getV1FileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -352,7 +352,7 @@ var DefaultApi = /** @class */ (function () {
      * @param bucketName
      */
     DefaultApi.prototype.optionsV1BucketName = function (bucketName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -446,7 +446,7 @@ var DefaultApi = /** @class */ (function () {
      * @param fileName
      */
     DefaultApi.prototype.optionsV1FileName = function (bucketName, fileName, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -549,7 +549,7 @@ var DefaultApi = /** @class */ (function () {
      * @param modelsPermission
      */
     DefaultApi.prototype.patchV1BucketName = function (bucketName, modelsPermission, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -603,7 +603,7 @@ var DefaultApi = /** @class */ (function () {
      * @param postV1BucketNameRequest
      */
     DefaultApi.prototype.postV1BucketName = function (bucketName, postV1BucketNameRequest, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{name}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName)));
         var queryParameters = {};
         var headerParams = {};
         // verify required parameter 'bucketName' is not null or undefined
@@ -660,7 +660,7 @@ var DefaultApi = /** @class */ (function () {
      * @param data
      */
     DefaultApi.prototype.putV1FileName = function (bucketName, fileName, data, extraJQueryAjaxSettings) {
-        var localVarPath = this.basePath + '/v1/Bucket/{bucketname}/File/{filename}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
+        var localVarPath = this.basePath + '/v1/Bucket/{BucketName}/File/{FileName}'.replace('{' + 'BucketName' + '}', encodeURIComponent(String(bucketName))).replace('{' + 'FileName' + '}', encodeURIComponent(String(fileName)));
         var queryParameters = {};
         var headerParams = {};
         var formParams = new FormData();
